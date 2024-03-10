@@ -1,6 +1,6 @@
 /report/*
 /node_modules/*
-/allure-report/*
+/allure-results/*
 /junit/*
 report.*
 .idea/*

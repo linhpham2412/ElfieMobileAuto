@@ -4,13 +4,10 @@ const Page = require('./page');
 /**
  * sub page containing specific selectors and methods for a specific page
  */
-class SearchPage extends Page {
+class SearchResultPage extends Page {
     /**
      * define selectors using getter methods
      */
-    get searchTextBox () {
-        return $('android=new UiSelector().text("Search or type URL").className("android.widget.EditText")');
-    }
 
 
     /**
@@ -18,9 +15,9 @@ class SearchPage extends Page {
      * e.g. to login using username and password
      */
 
-    async getSearchResultByText (resultText) {
-        return $(`android=new UiSelector().text("${resultText}").className("android.widget.TextView")`);
+    async getSearchResultByIndex(index) {
+        return (await $(`span.yIn8Od:nth-child(${index})`));
     }
 }
 
-module.exports = new SearchPage();
+module.exports = new SearchResultPage();
